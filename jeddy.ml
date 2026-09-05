@@ -1,4 +1,6 @@
-> fix save/caching bug when old version gets saved>
+> log everything just in case!
+> fix overwrite by an older cached version!
+> fix save/caching bug when old version gets saved!!!
 > clean snap buffers
 > unify the config and make fonts configurable within a theme/mood
 > introduce distinction between root and base directories
@@ -9,6 +11,7 @@
 > command interface - selected text or current line
 
 > how to use in Readme
+> about jeddy in the help section
 > come up with unique and descriptive name - Text Must Flow on the Local Web - TextPositive?
 > publish on npm
 

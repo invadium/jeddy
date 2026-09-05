@@ -459,7 +459,10 @@ window.onload = function() {
     jed.mouseup  = onChange
     jed.onkeyup  = function(e) {
         // no change escape cases
-        if (e.ctrlKey || e.metaKey || e.altKey) return
+        if (e.ctrlKey || e.metaKey || e.altKey) {
+            console.log('ignoring with special')
+            return
+        }
         switch(e.code) {
             case 'F1': case 'F2': case 'F3': case 'F4': case 'F5': case 'F6':
             case 'F7': case 'F8': case 'F9': case 'F10': case 'F11': case 'F12': case 'F13':

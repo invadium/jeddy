@@ -21,6 +21,6 @@
   "homepage": "https://github.com/invider/jeddy#readme",
   "dependencies": {
     "express": "4.19",
-    "open": "10.1.0"
+    "open": "8.4.2"
   }
 }
