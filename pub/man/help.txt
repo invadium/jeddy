@@ -2,10 +2,16 @@
 Jeddy Help
 ==========
 
+------
+Menu
+------
+The button in the top-right corner opens the menu with the common actions
+and the Mood, Font and Layout submenus. It is hidden in the minimal layout.
+
 ----------
 Shortcuts
 ----------
-Esc - return focus to the editor
+Esc - close the menu and return focus to the editor
 F1  or Ctrl+H - show help
 F2  or Ctrl+S - save the file.
 F3  or Ctrl+Q - list files in the work folder

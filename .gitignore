@@ -11,3 +11,7 @@ node_modules
 .jeddy
 .stat
 
+# agents
+.agents
+.claude
+

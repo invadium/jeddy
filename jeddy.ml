@@ -2,8 +2,8 @@
 > fix overwrite by an older cached version!
 > fix save/caching bug when old version gets saved!!!
 > clean snap buffers
-> unify the config and make fonts configurable within a theme/mood
-> introduce distinction between root and base directories
+> unify the config and make fonts configurable within a theme/mood?
+> introduce distinction between root and base directories?
 > ability to browse localstore buffers or maybe just reset them?
 > more expressive status line - show 'editing', 'home', enabled theme mode for 3s etc...
 > terminal themes 
@@ -18,6 +18,7 @@
 > buffer history browser
 > change log in the local file?
 
+V menu button with the mood, font and layout submenus
 V temporary messages in the status line
 V rename buffer.snap() to more appropriate name
 V cache snap buffers in local store

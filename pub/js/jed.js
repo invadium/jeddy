@@ -5,6 +5,7 @@ import { stat } from './stat.js'
 import { config } from './config.js'
 import { evo } from './evo.js'
 import cmd from './cmd.js'
+import menu from './menu.js'
 import env from './env.js'
 import cache from './cache.js'
 import status from './status.js'
@@ -22,20 +23,26 @@ const themeData = [
 const themes = themeData.filter((e, i) => i % 2 === 0)
 const themeNames = themeData.filter((e, i) => i % 2 === 1)
 
-const fonts = [
-    'PixelOperator',
-    'PixelOperatorMono',
-    'iAWriterDuospace',
-    'LibreBaskerville-Regular',
-    'monof55',
-    'SHPinscher-Regular',
-    'UnderwoodChampion',
+const fontData = [
+    'PixelOperator',            'Pixel Operator',
+    'PixelOperatorMono',        'Pixel Operator Mono',
+    'iAWriterDuospace',         'iA Writer Duospace',
+    'LibreBaskerville-Regular', 'Libre Baskerville',
+    'monof55',                  'Mono F55',
+    'SHPinscher-Regular',       'Pinscher',
+    'UnderwoodChampion',        'Underwood Champion',
 ]
 
-const layouts = [
-    'full',
-    'minimal',
+const fonts = fontData.filter((e, i) => i % 2 === 0)
+const fontNames = fontData.filter((e, i) => i % 2 === 1)
+
+const layoutData = [
+    'full',      'Full',
+    'minimal',   'Minimal',
 ]
+
+const layouts = layoutData.filter((e, i) => i % 2 === 0)
+const layoutNames = layoutData.filter((e, i) => i % 2 === 1)
 
 window.env = env
 
@@ -68,6 +75,7 @@ function switchTheme(itheme, noSave) {
 
     env.config.itheme = itheme
     //localStorage.setItem('theme', itheme)
+    menu.refresh()
     if (!noSave) config.save()
 }
 
@@ -96,6 +104,7 @@ function switchFont(font, noSave) {
 
     env.config.font = font
     //localStorage.setItem('font', font)
+    menu.refresh()
     if (!noSave) config.save()
 }
 
@@ -113,15 +122,19 @@ function switchLayout(ilayout, noSave) {
 
     console.log('layout: ' + layouts[ilayout])
     const status = document.getElementById('status')
+    const menuPane = document.getElementById('menu')
     switch(ilayout) {
         case 0:
             status.style.display = 'block'
+            if (menuPane) menuPane.style.display = 'block'
             break
         case 1:
             status.style.display = 'none'
+            if (menuPane) menuPane.style.display = 'none'
             break
     }
     env.config.ilayout = ilayout
+    menu.refresh()
     if (!noSave) config.save()
 }
 
@@ -237,6 +250,48 @@ function list(readOnly) {
     if (readOnly) window.location.hash = '^'
     else window.location.hash = ''
     //sync()
+}
+
+function buildMenu() {
+    menu.build([
+        { name: 'Save',      key: 'F2', action: function() {
+            save(bufferControl.current(), saveHandlers)
+        } },
+        { name: 'Files',     key: 'F3',      action: function() { list(false) } },
+        { name: 'View Only', key: 'Ctrl+F3', action: function() { list(true)  } },
+        { name: 'Buffers',   key: 'F4', action: showBuffers },
+        { name: 'Stat',      key: 'F9', action: showStat },
+
+        { separator: true },
+
+        { name: 'Mood', items: themes.map(function(theme, i) {
+            return {
+                name: themeNames[i],
+                keepOpen: true,
+                selected: function() { return (env.config.itheme || 0) === i },
+                action: function() { switchTheme(i) },
+            }
+        }) },
+        { name: 'Font', items: fonts.map(function(font, i) {
+            return {
+                name: fontNames[i],
+                keepOpen: true,
+                selected: function() { return env.config.font === font },
+                action: function() { switchFont(font) },
+            }
+        }) },
+        { name: 'Layout', items: layouts.map(function(layout, i) {
+            return {
+                name: layoutNames[i],
+                selected: function() { return (env.config.ilayout || 0) === i },
+                action: function() { switchLayout(i) },
+            }
+        }) },
+
+        { separator: true },
+
+        { name: 'Help', key: 'F1', action: showHelp },
+    ])
 }
 
 function sync() {
@@ -372,7 +427,7 @@ window.onkeydown = function(e) {
             case 'F9':      showStat();                 stop = true; break;
             case 'F10':     switchTheme();              stop = true; break;
             case 'F11':     switchLayout();             stop = true; break;
-            case 'Escape':  focus();                    stop = true; break;
+            case 'Escape':  menu.hide(); focus();       stop = true; break;
         }
     }
 
@@ -384,7 +439,7 @@ window.onkeydown = function(e) {
             case 'KeyS': save(buf, saveHandlers);   stop = true; break;
             case 'KeyQ': list(false);               stop = true; break;
             case 'KeyY': list(true);                stop = true; break;
-            case 'KeyB': buffers();                 stop = true; break;
+            case 'KeyB': showBuffers();             stop = true; break;
             case 'KeyM': switchTheme();             stop = true; break;
             case 'KeyL': switchLayout();            stop = true; break;
             case 'F3':   list(true);                stop = true; break;
@@ -479,6 +534,7 @@ window.onload = function() {
         onChange()
     }
     bufferControl.bind(jed)
+    buildMenu()
 
     env.loadEnvc(afterEnvLoad)
 
