@@ -18,6 +18,11 @@ const themeData = [
     'amber-term',   'Amber Term',
     'green-term',   'Green Term',
     'e-ink',        'E-Ink',
+
+    'catppuccin-latte',     'Catppuccin Latte',      // light
+    'catppuccin-frappe',    'Catppuccin Frappé',
+    'catppuccin-macchiato', 'Catppuccin Macchiato',
+    'catppuccin-mocha',     'Catppuccin Mocha',      // darkest
 ]
 
 const themes = themeData.filter((e, i) => i % 2 === 0)

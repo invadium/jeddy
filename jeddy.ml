@@ -18,6 +18,8 @@
 > buffer history browser
 > change log in the local file?
 
+V catppuccin moods - latte, frappe, macchiato, mocha
+V themeable editor frame color
 V sans fonts - iA Writer Quattro, Atkinson Hyperlegible, Work Sans
 V self-host EB Garamond and Merriweather instead of loading from Google
 V fix the broken Libre Baskerville font-face

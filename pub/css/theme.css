@@ -7,6 +7,7 @@
     --background-color:  #fafac8;
     --primary-color:     #222222;
     --frame-color:       orange;
+    --jed-border-color:  #909090;
     --frame-width:       1px;
     --frame-width-clean: 1px;
     --frame-width-dirty: 3px;
@@ -145,4 +146,110 @@
     --scrollbar-thumb-disabled: #C0C0C0;
     --scrollbar-thumb-focused:  #A0A0A0;
     --scrollbar-thumb-hover:    #A0A0A0;
+}
+
+/* Catppuccin - https://github.com/catppuccin/catppuccin */
+
+[data-theme="catppuccin-latte"] {
+    --primary-font:     'iAWriterQuattro';
+    --font-size:        24;
+    --jed-width:        55%; 
+
+    --border-color:      #dce0e8;
+    --background-color:  #eff1f5;
+    --primary-color:     #4c4f69;
+    --frame-color:       #8839ef;
+    --jed-border-color:  #ccd0da;
+    --selection:         #acb0be;
+
+    --link-color:        #1e66f5;
+    --visited-color:     #7287fd;
+    --hover-color:       #fe640b;
+    --active-color:      #d20f39;
+
+    --status-color:      #6c6f85;
+    --status-background: #e6e9ef;
+
+    --scrollbar-track:          #e6e9ef;
+    --scrollbar-thumb-disabled: #ccd0da;
+    --scrollbar-thumb-focused:  #bcc0cc;
+    --scrollbar-thumb-hover:    #9ca0b0;
+}
+
+[data-theme="catppuccin-frappe"] {
+    --primary-font:     'iAWriterQuattro';
+    --font-size:        24;
+    --jed-width:        55%; 
+
+    --border-color:      #232634;
+    --background-color:  #303446;
+    --primary-color:     #c6d0f5;
+    --frame-color:       #ca9ee6;
+    --jed-border-color:  #414559;
+    --selection:         #626880;
+
+    --link-color:        #8caaee;
+    --visited-color:     #babbf1;
+    --hover-color:       #ef9f76;
+    --active-color:      #e78284;
+
+    --status-color:      #a5adce;
+    --status-background: #292c3c;
+
+    --scrollbar-track:          #292c3c;
+    --scrollbar-thumb-disabled: #414559;
+    --scrollbar-thumb-focused:  #51576d;
+    --scrollbar-thumb-hover:    #737994;
+}
+
+[data-theme="catppuccin-macchiato"] {
+    --primary-font:     'iAWriterQuattro';
+    --font-size:        24;
+    --jed-width:        55%; 
+
+    --border-color:      #181926;
+    --background-color:  #24273a;
+    --primary-color:     #cad3f5;
+    --frame-color:       #c6a0f6;
+    --jed-border-color:  #363a4f;
+    --selection:         #5b6078;
+
+    --link-color:        #8aadf4;
+    --visited-color:     #b7bdf8;
+    --hover-color:       #f5a97f;
+    --active-color:      #ed8796;
+
+    --status-color:      #a5adcb;
+    --status-background: #1e2030;
+
+    --scrollbar-track:          #1e2030;
+    --scrollbar-thumb-disabled: #363a4f;
+    --scrollbar-thumb-focused:  #494d64;
+    --scrollbar-thumb-hover:    #6e738d;
+}
+
+[data-theme="catppuccin-mocha"] {
+    --primary-font:     'iAWriterQuattro';
+    --font-size:        24;
+    --jed-width:        55%; 
+
+    --border-color:      #11111b;
+    --background-color:  #1e1e2e;
+    --primary-color:     #cdd6f4;
+    --frame-color:       #cba6f7;
+    --jed-border-color:  #313244;
+    --selection:         #585b70;
+
+    --link-color:        #89b4fa;
+    --visited-color:     #b4befe;
+    --hover-color:       #fab387;
+    --active-color:      #f38ba8;
+
+    --status-color:      #a6adc8;
+    --status-background: #181825;
+
+    --scrollbar-track:          #181825;
+    --scrollbar-thumb-disabled: #313244;
+    --scrollbar-thumb-focused:  #45475a;
+    --scrollbar-thumb-hover:    #6c7086;
 }

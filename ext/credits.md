@@ -25,6 +25,16 @@ The following table lists the font families with the corresponding copyrights an
 | monofur | monofur (c) 2000 tobias b koehler (unci@tigerden.com) | [Freeware license](./3rd-party-licenses/monofur.license) | https://www.dafont.com/monofur.font |
 | Underwood Champion | Copyright 2008 Vic Fieger | [Freeware license](./3rd-party-licenses/1001fonts-underwood-champion-eula.license) | https://www.1001fonts.com/underwood-champion-font.html |
 
+# Third-party Color Palettes
+
+| palette | copyright | license | source |
+|---|---|---|---|
+| Catppuccin | Copyright (c) 2021 Catppuccin | [MIT License](./3rd-party-licenses/Catppuccin-MIT.license) | https://github.com/catppuccin/catppuccin |
+
+The `catppuccin-latte`, `catppuccin-frappe`, `catppuccin-macchiato` and
+`catppuccin-mocha` moods in `pub/css/theme.css` map the four official flavours
+onto jeddy's theme variables.
+
 You can find the text of the listed licenses in the [3rd-party-licenses](./3rd-party-licenses) folder.
 
 
