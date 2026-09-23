@@ -24,11 +24,21 @@ const themes = themeData.filter((e, i) => i % 2 === 0)
 const themeNames = themeData.filter((e, i) => i % 2 === 1)
 
 const fontData = [
+    // writing faces
+    'iAWriterDuospace',         'iA Writer Duospace',
+    'iAWriterQuattro',          'iA Writer Quattro',
+    'AtkinsonHyperlegible',     'Atkinson Hyperlegible',
+    'WorkSans',                 'Work Sans',
+    // serif
+    'LibreBaskerville-Regular', 'Libre Baskerville',
+    'EBGaramond',               'EB Garamond',
+    'Merriweather',             'Merriweather',
+    // mono
+    'monof55',                  'Mono F55',
+    'Lekton',                   'Lekton',
+    // pixel and display
     'PixelOperator',            'Pixel Operator',
     'PixelOperatorMono',        'Pixel Operator Mono',
-    'iAWriterDuospace',         'iA Writer Duospace',
-    'LibreBaskerville-Regular', 'Libre Baskerville',
-    'monof55',                  'Mono F55',
     'SHPinscher-Regular',       'Pinscher',
     'UnderwoodChampion',        'Underwood Champion',
 ]

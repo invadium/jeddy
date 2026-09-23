@@ -18,6 +18,9 @@
 > buffer history browser
 > change log in the local file?
 
+V sans fonts - iA Writer Quattro, Atkinson Hyperlegible, Work Sans
+V self-host EB Garamond and Merriweather instead of loading from Google
+V fix the broken Libre Baskerville font-face
 V menu button with the mood, font and layout submenus
 V temporary messages in the status line
 V rename buffer.snap() to more appropriate name
@@ -47,7 +50,3 @@ V hide status line
 V dirty flag instead of save message
 V a status line to show 'Saved to ...' messages
 V non-editable directory listing
-
-
-
-
